@@ -14,6 +14,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.runtime.*
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -56,11 +57,11 @@ fun SignupScreen( navController: NavController,viewModel: SignUpUserViewModel = 
                 isError = viewModel.isUserNameValid.value,
                 //errorMessage=if(viewModel.isUserNameValid.value) viewModel.userNameErrMsg.value else null,
                 label = { Text(text = "User Name") },
-                modifier = Modifier.fillMaxWidth()
+                modifier = Modifier.fillMaxWidth().testTag("user name")
 
             )
             Text(
-                modifier = Modifier.padding(start = 8.dp),
+                modifier = Modifier.padding(start = 8.dp).testTag("username_error"),
                 text = viewModel.userNameErrMsg.value,
                 fontSize = 14.sp,
                 color = Color.Red
@@ -74,14 +75,16 @@ fun SignupScreen( navController: NavController,viewModel: SignUpUserViewModel = 
                 },
                 isError = viewModel.isEmailValid.value,
                 label = { Text(text = "Email address") },
-                modifier = Modifier.fillMaxWidth()
+                modifier = Modifier.fillMaxWidth().testTag("email")
             )
-            Text(
-                modifier = Modifier.padding(start = 8.dp),
-                text = viewModel.emailErrMsg.value,
-                fontSize = 14.sp,
-                color = Color.Red
-            )
+
+                Text(
+                    modifier = Modifier.padding(start = 8.dp),
+                    text = viewModel.emailErrMsg.value,
+                    fontSize = 14.sp,
+                    color = Color.Red
+                )
+
             Spacer(modifier = Modifier.height(8.dp))
 
             var passwordVisibility by remember { mutableStateOf(false) }
@@ -105,7 +108,7 @@ fun SignupScreen( navController: NavController,viewModel: SignUpUserViewModel = 
                         )
                     }
                 },
-                modifier = Modifier.fillMaxWidth()
+                modifier = Modifier.fillMaxWidth().testTag("password")
             )
             Text(
                 modifier = Modifier.padding(start = 8.dp),
@@ -136,7 +139,7 @@ fun SignupScreen( navController: NavController,viewModel: SignUpUserViewModel = 
                         )
                     }
                 },
-                modifier = Modifier.fillMaxWidth()
+                modifier = Modifier.fillMaxWidth().testTag("confirm password")
             )
             Text(
                 modifier = Modifier.padding(start = 8.dp),
@@ -159,7 +162,7 @@ fun SignupScreen( navController: NavController,viewModel: SignUpUserViewModel = 
 
                 },
 
-                modifier = Modifier.fillMaxWidth(),
+                modifier = Modifier.fillMaxWidth().testTag("Sign up"),
                 enabled = viewModel.isEnabledRegisterButton.value
             ) {
                 Text(text = "Sign up")
@@ -186,5 +189,6 @@ fun SignupScreen( navController: NavController,viewModel: SignUpUserViewModel = 
         }
     }
 }
+
 
 

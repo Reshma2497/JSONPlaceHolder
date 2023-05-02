@@ -118,6 +118,7 @@ dependencies {
     //mockito
     testImplementation 'org.mockito:mockito-core:3.8.0'
     androidTestImplementation 'org.mockito:mockito-android:2.2.0'
+    androidTestImplementation "org.mockito:mockito-android:4.1.0"
 
     testImplementation "androidx.arch.core:core-testing:2.1.0"
 
@@ -139,5 +140,13 @@ dependencies {
     //material icons
     implementation "androidx.compose.material:material-icons-core:${compose_ui_version}"
     implementation "androidx.compose.material:material-icons-extended:${compose_ui_version}"
+
+    // For instrumentation tests
+    androidTestImplementation  'com.google.dagger:hilt-android-testing:2.44'
+    androidTestAnnotationProcessor 'com.google.dagger:hilt-compiler:2.44'
+
+    // For local unit tests
+    testImplementation 'com.google.dagger:hilt-android-testing:2.44'
+    testAnnotationProcessor 'com.google.dagger:hilt-compiler:2.44'
 
 }
