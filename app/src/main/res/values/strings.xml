@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">JSONPlaceHolder</string>
+    <string name="placeholder_search">Search</string>
+
+
+    <string name="facebook_app_id">803875091081629</string>
+    <string name="fb_login_protocol_scheme">fb803875091081629</string>
+    <string name="facebook_client_token">af3e1ce27a1be23ecb035525127a0b2d</string>
+
+
+</resources>
