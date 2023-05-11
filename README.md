@@ -21,24 +21,19 @@ This Api as:
 <img width="349" alt="Screenshot 2023-05-11 at 17 18 40" src="https://github.com/Reshma2497/JSONPlaceHolder/assets/110983170/cc71a0ea-50d7-4e5b-aa44-27eb8782669a">
 
 
-Libraries:
+**Libraries:**
 
-Compose Toolkit
-Hilt
-Dependency Injection
-Kotlin Coroutines
-Firebase Authentication
-Testing- Mockito and Espresso 
+* Compose Toolkit
+* Hilt
+* Dependency Injection
+* Kotlin Coroutines
+* Firebase Authentication
+* Testing- Mockito and Espresso 
 
-Unit Test cases:
+**Unit Test cases:**
 Used mockito 
 Completed for User Page
 
-UI Test cases:
+**UI Test cases:**
 Used espresso 
-Compeleted UI testing for Login and SignUp pages 
-
-JSON Placeholder Api is still under development in testing remebering pages.
-
-
-
+Compeleted UI testing for Login and SignUp pages.
