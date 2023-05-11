@@ -111,7 +111,7 @@ fun SignupScreen( navController: NavController,viewModel: SignUpUserViewModel = 
                 modifier = Modifier.fillMaxWidth().testTag("password")
             )
             Text(
-                modifier = Modifier.padding(start = 8.dp),
+                modifier = Modifier.padding(start = 8.dp).testTag("password_error"),
                 text = viewModel.passwordErrMsg.value,
                 fontSize = 14.sp,
                 color = Color.Red
@@ -142,7 +142,7 @@ fun SignupScreen( navController: NavController,viewModel: SignUpUserViewModel = 
                 modifier = Modifier.fillMaxWidth().testTag("confirm password")
             )
             Text(
-                modifier = Modifier.padding(start = 8.dp),
+                modifier = Modifier.padding(start = 8.dp).testTag("confirm password_error"),
                 text = viewModel.confPasswordErrMsg.value,
                 fontSize = 14.sp,
                 color = Color.Red

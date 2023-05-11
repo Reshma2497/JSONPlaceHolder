@@ -1,5 +1,6 @@
 package com.example.jsonplaceholder.ui.signup
 
+import android.annotation.SuppressLint
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
@@ -89,6 +90,7 @@ class SignUpUserViewModel : ViewModel() {
         shouldEnabledRegisterButton()
     }
 
+    @SuppressLint("SuspiciousIndentation")
     fun SignUp(){
 
         val auth = FirebaseAuth.getInstance()

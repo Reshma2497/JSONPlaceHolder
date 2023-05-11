@@ -2,14 +2,11 @@ package com.example.jsonplaceholder.ui.login
 
 import android.annotation.SuppressLint
 import android.app.Activity
-import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.Image
-
 import androidx.compose.foundation.layout.*
-
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Visibility
@@ -19,12 +16,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.core.content.ContextCompat
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import com.example.jsonplaceholder.R
@@ -34,14 +31,11 @@ import com.example.jsonplaceholder.ui.theme.SkyBlue
 import com.facebook.CallbackManager
 import com.facebook.FacebookCallback
 import com.facebook.FacebookException
-import com.facebook.FacebookSdk
-import com.facebook.FacebookSdk.getApplicationContext
 import com.facebook.login.LoginManager
 import com.facebook.login.LoginResult
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
-import kotlinx.coroutines.launch
 
 @SuppressLint("RememberReturnType")
 @Composable
@@ -138,10 +132,10 @@ fun LoginScreen(
                 },
                 isError = viewModel.isEmailValid.value,
                 label = { Text(text = "Email address") },
-                modifier = Modifier.fillMaxWidth()
+                modifier = Modifier.fillMaxWidth().testTag("email")
             )
             Text(
-                modifier = Modifier.padding(start = 8.dp),
+                modifier = Modifier.padding(start = 8.dp).testTag("email_error"),
                 text = viewModel.emailErrMsg.value,
                 fontSize = 14.sp,
                 color = Color.Red
@@ -169,10 +163,10 @@ fun LoginScreen(
                         )
                     }
                 },
-                modifier = Modifier.fillMaxWidth()
+                modifier = Modifier.fillMaxWidth().testTag("password")
             )
             Text(
-                modifier = Modifier.padding(start = 8.dp),
+                modifier = Modifier.padding(start = 8.dp).testTag("password_error"),
                 text = viewModel.passwordErrMsg.value,
                 fontSize = 14.sp,
                 color = Color.Red
@@ -192,7 +186,7 @@ fun LoginScreen(
                     }
                 },
 
-                modifier = Modifier.fillMaxWidth(), enabled = viewModel.isEnabledLoginButton.value
+                modifier = Modifier.fillMaxWidth().testTag("Login"), enabled = viewModel.isEnabledLoginButton.value
             ) {
                 Text(text = "Sign in")
             }

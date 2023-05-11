@@ -117,11 +117,59 @@ class SignUpScreenKtTest {
     }
 
     @Test
-    fun validatevalidUserName(){
+    fun validateValidUserName(){
         val usernameNode = composeTestRule
             .onNodeWithTag("user name")
             .assertIsDisplayed()
         usernameNode.performTextInput("123234")
+
+    }
+
+    @Test
+    fun validateInvalidPassword(){
+        val passwordNode = composeTestRule
+            .onNodeWithTag("password")
+            .assertIsDisplayed()
+        passwordNode.performTextInput("123")
+
+        val passwordErrorNode = composeTestRule
+            .onNodeWithTag("password_error")
+            .assertIsDisplayed()
+
+        passwordErrorNode.assertTextEquals("Password should be greater than 6")
+
+    }
+
+    @Test
+    fun validateValidPassword(){
+        val passwordNode = composeTestRule
+            .onNodeWithTag("password")
+            .assertIsDisplayed()
+        passwordNode.performTextInput("res123")
+
+    }
+
+    @Test
+    fun validateInvalidConfirmPassword(){
+        val confirmPasswordNode = composeTestRule
+            .onNodeWithTag("confirm password")
+            .assertIsDisplayed()
+        confirmPasswordNode.performTextInput("123")
+
+        val confirmPasswordErrorNode = composeTestRule
+            .onNodeWithTag("confirm password_error")
+            .assertIsDisplayed()
+
+        confirmPasswordErrorNode.assertTextEquals("Password did not match")
+
+    }
+
+    @Test
+    fun validateValidConfirmPassword(){
+        val confirmPasswordNode = composeTestRule
+            .onNodeWithTag("confirm password")
+            .assertIsDisplayed()
+        confirmPasswordNode.performTextInput("res123")
 
     }
 }
