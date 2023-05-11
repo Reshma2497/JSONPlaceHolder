@@ -1,3 +1,67 @@
+
+# Assignment 5 Guidelines
+
+This project is part of Assignment 5 and aims to implement a mobile application using the following tech stack and requirements.
+
+## Tech Stack
+
+- Architecture Pattern: MVVM or CLEAN
+- UI Framework: Jetpack Compose
+- Dependency Injection: Hilt or Dagger
+- Remote Data Access: Retrofit or Tor
+- Testing: Local and Instrumental
+
+## API
+
+The application fetches data from the following RESTful API:
+
+Base URL: https://jsonplaceholder.typicode.com/
+
+Endpoints:
+- /posts
+- /comments
+- /albums
+- /photos
+- /todos
+- /users
+
+## UI
+
+The UI of the application should meet the following requirements:
+
+- Side Drawer Menu
+- Listing and Detail pages for each data type (posts, comments, albums, photos, todos, users)
+- Remember list positions for each page
+
+Feel free to design and implement the UI and UX in a way that you find visually appealing and user-friendly.
+
+## Getting Started
+
+To run the project locally and start development, follow these steps:
+
+1. Clone the repository.
+2. Open the project in your preferred IDE.
+3. Build and run the application on an Android emulator or physical device.
+
+## Contributing
+
+Contributions are welcome! If you would like to contribute to this project, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes and commit them.
+4. Push your changes to your forked repository.
+5. Open a pull request with a detailed description of your changes.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+
+
+
+
+
 JSON Placeholder Api is an User and post Api.
 
 This Api as:
