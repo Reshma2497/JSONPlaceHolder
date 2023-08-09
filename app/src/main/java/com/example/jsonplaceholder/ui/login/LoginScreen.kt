@@ -107,11 +107,6 @@ fun LoginScreen(
         LaunchedEffect(callbackManager) {
             LoginManager.getInstance().registerCallback(callbackManager, facebookCallback)
         }
-
-
-
-
-
         Column(
             modifier = Modifier
                 .fillMaxSize()

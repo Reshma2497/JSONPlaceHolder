@@ -1,13 +1,10 @@
 package com.example.jsonplaceholder.ui.signup
 
-import androidx.compose.runtime.MutableState
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.saveable.rememberSaveable
+
 import androidx.compose.ui.test.*
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.navigation.compose.rememberNavController
-import com.example.jsonplaceholder.ui.signup.*
-import org.junit.Assert.*
+import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Rule
 
@@ -170,6 +167,8 @@ class SignUpScreenKtTest {
             .onNodeWithTag("confirm password")
             .assertIsDisplayed()
         confirmPasswordNode.performTextInput("res123")
+
+
 
     }
 }
